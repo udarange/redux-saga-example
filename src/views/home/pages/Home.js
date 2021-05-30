@@ -18,38 +18,29 @@ export default function Home() {
     // }
   }, [dispatch, history, token]);
 
-  console.log(patientList);
+  // console.log(patientList);
 
   return (
     <Container>
       <h1>Patient List</h1>
       <Table striped bordered hover>
         <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+        </tr>
         </thead>
         <tbody>
+        {patientList.map((el, index) =>
           <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{index + 1}</td>
+            <td>{el.name?.first}</td>
+            <td>{el.email}</td>
+            <td>{el.gender}</td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colSpan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+        )}
         </tbody>
       </Table>
     </Container>

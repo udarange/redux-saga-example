@@ -21,7 +21,7 @@ export default function homeReducer(state = initialState, action) {
     case FETCH_PATIENT_LIST_SUCCESS_ACTION:
       return {
         ...state,
-        token: action.patientList,
+        patientList: action.patientList,
         patientListIsLoading: false,
         patientListHasError: false,
       };
